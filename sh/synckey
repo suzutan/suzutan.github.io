@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+touch ~/.ssh/authorized_keys
+curl -so ~/.ssh/authorized_keys https://github.com/suzutan.keys
+chmod 600 ~/.ssh/authorized_keys
+echo Synckey Complete!
