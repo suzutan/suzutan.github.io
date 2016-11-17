@@ -1,5 +1,5 @@
 #!/bin/bash
-
+yum -y install git libxml2-devel libxslt-devel bzip2-devel readline-devel sqlite-devel
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 pyenv install 3.5.2
