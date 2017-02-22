@@ -4,7 +4,7 @@ cd
 
 ## install go
 curl -LO https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
-tar -C ~/go -xzf go1.8.linux-amd64.tar.gz
+tar -C ~/ -xzf go1.8.linux-amd64.tar.gz
 
 
 ## install glide (go package manager)
