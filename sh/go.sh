@@ -1,0 +1,31 @@
+#!/bin/bash -eu
+
+cd
+
+## install go
+curl -LO https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
+tar -C ~/go -xzf go1.8.linux-amd64.tar.gz
+
+
+## install glide (go package manager)
+go get -u github.com/Masterminds/glide/...
+
+#peco
+git clone https://github.com/peco/peco
+cd peco
+glide install
+go build cmd/peco/peco.go
+
+
+cd
+#gdrive
+go get -u github.com/prasmussen/gdrive/...
+#pt
+go get -u github.com/monochromegane/the_platinum_searcher/...
+#qq
+go get -u github.com/mattn/qq/...
+#jid
+go get -u github.com/simeji/jid/...
+
+
+
