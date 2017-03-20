@@ -1,5 +1,27 @@
 #!/bin/bash
-yum -y install git libxml2-devel libxslt-devel bzip2-devel readline-devel sqlite-devel
-git clone https://github.com/yyuu/pyenv.git ~/.pyenv
-git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
-pyenv install 3.5.2
+
+# install deps
+if type yum >/dev/null 2>&1; then
+	yum -y install git libxml2-devel libxslt-devel bzip2-devel readline-devel sqlite-devel
+else
+	echo "yum not found. skip install packages."
+	echo "see: git libxml2-devel libxslt-devel bzip2-devel readline-devel sqlite-devel"
+fi
+
+
+# install pyenv
+if [ ! -e ~/.pyenv ]; then
+	git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+else
+	echo "pyenv is already installed."
+fi
+
+# install pyenv-virtualenv
+if [ ! -e ~/.pyenv/plugins/pyenv-virtualenv ]; then
+	git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+else
+	echo "pyenv-virtualenv is already installed."
+fi
+
+
+
